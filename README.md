@@ -4,7 +4,7 @@ My personal portfolio and a representation of my career
 
 ## Link
 
-https://deathpancake1.github.io/youssef-portfolio/
+https://Youssef-Dawoud.github.io/youssef-portfolio/
 
 ## Dependencies
 
