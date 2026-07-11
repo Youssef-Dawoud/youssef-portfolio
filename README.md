@@ -1,4 +1,4 @@
-# Youssef Dawoud — Portfolio
+# Youssef Dawoud's Portfolio
 
 Personal portfolio site: applied cryptography, embedded/hardware security, experience, education, and certificates.
 

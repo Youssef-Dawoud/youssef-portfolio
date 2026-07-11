@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Youssef Dawoud — Applied Cryptography & Embedded Security</title>
-  <meta name="description" content="Youssef Dawoud — Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied cryptography, OpenSSL internals, Trusted Execution Environments, hardware Roots of Trust." />
+  <title>Youssef Dawoud | Cybersecurity Engineer</title>
+  <meta name="description" content="Youssef Dawoud, Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied security research, full-stack engineering, and cryptographic hardware offload." />
   <link rel="icon" href="img/code.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,13 +34,14 @@
 
   <header id="home" class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">// cybersecurity m.sc. candidate — politecnico di torino</p>
+      <p class="eyebrow">// cybersecurity m.sc. candidate, politecnico di torino</p>
       <h1>Youssef Dawoud</h1>
-      <h2 class="gradient-text">Applied Cryptography &amp; Embedded Security Engineer</h2>
+      <h2 class="gradient-text">Cybersecurity Engineer</h2>
       <p class="hero-desc">
-        I build hardware-backed cryptographic infrastructure — redirecting cryptographic
-        operations into Trusted Execution Environments and Roots of Trust, without the
-        application ever knowing the difference.
+        M.Sc. candidate in Cybersecurity at Politecnico di Torino. My background spans
+        full-stack engineering and applied security, and I'm currently extending academic
+        research on cryptographic hardware offload. Still exploring where in security I
+        want to specialize next, and open to that changing.
       </p>
       <div class="hero-actions">
         <a href="assets/YoussefDawoud.pdf" download="Youssef-Dawoud-CV.pdf" class="btn btn-primary">
@@ -58,7 +59,7 @@
         <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
         <span class="terminal-title">agnosticssl_engine.c</span>
       </div>
-      <pre class="terminal-body"><code><span class="c-comment">// backend-agnostic dispatch — application layer is unaware</span>
+      <pre class="terminal-body"><code><span class="c-comment">// backend-agnostic dispatch: application layer is unaware</span>
 <span class="c-type">EVP_PKEY</span> *eph_key = <span class="c-fn">ecdh_generate_ephemeral</span>(<span class="c-fn">chacha20_rng</span>());
 <span class="c-type">engine_dispatch</span>(<span class="c-const">ECDSA_SIGN</span>, eph_key, .backend = <span class="c-const">OP_TEE</span>);
 <span class="c-comment">// same call, zero changes, different silicon:</span>
@@ -69,15 +70,15 @@
   <main>
 
     <section id="about" class="section">
-      <p class="section-label">01 — About</p>
+      <p class="section-label">01 / About</p>
       <h2 class="section-title">What I actually do</h2>
       <div class="about-grid">
         <p class="about-text">
           I'm a Cybersecurity Engineering Master's student at Politecnico di Torino,
           graduating December 2026 with a 27.3/30 average. My focus is applied
           cryptography and hardware-backed security: making cryptographic operations
-          portable across trusted hardware backends — Trusted Execution Environments,
-          silicon Roots of Trust, and hardware accelerators — without rewriting the
+          portable across trusted hardware backends: Trusted Execution Environments,
+          silicon Roots of Trust, and hardware accelerators, without rewriting the
           software that depends on them.
         </p>
         <p class="about-text">
@@ -91,13 +92,13 @@
         </p>
       </div>
       <div class="lang-row">
-        <span class="lang-pill">English — C1 (IELTS)</span>
-        <span class="lang-pill">Italian — B1, improving</span>
+        <span class="lang-pill">English: C1 (IELTS)</span>
+        <span class="lang-pill">Italian: B1, improving</span>
       </div>
     </section>
 
     <section id="research" class="section section-alt">
-      <p class="section-label">02 — Research</p>
+      <p class="section-label">02 / Research</p>
       <h2 class="section-title">Master's Thesis: AgnosticSSL</h2>
       <div class="research-card reveal">
         <div class="research-header">
@@ -114,8 +115,8 @@
         </div>
         <p>
           AgnosticSSL is a modular OpenSSL engine that transparently redirects
-          cryptographic operations into heterogeneous trusted environments —
-          currently OP-TEE and OpenTitan, a RISC-V silicon Root of Trust — so
+          cryptographic operations into heterogeneous trusted environments,
+          currently OP-TEE and OpenTitan (a RISC-V silicon Root of Trust), so
           applications get hardware-backed isolation with zero code changes.
           On OpenTitan, cryptographic offload has shown speedups of up to
           40&times; for SHA-256 and 82&times; for AES-256-CBC over software execution.
@@ -127,12 +128,12 @@
           elliptic-curve signatures (ECDSA), ephemeral key exchange (ECDH), and a
           ChaCha20-based random number generator for secure ephemeral key generation.
         </p>
-        <p class="research-note">Supervisor: Prof. L. Barbierato — Politecnico di Torino</p>
+        <p class="research-note">Supervisor: Prof. L. Barbierato, Politecnico di Torino</p>
       </div>
     </section>
 
     <section id="skills" class="section">
-      <p class="section-label">03 — Skills</p>
+      <p class="section-label">03 / Skills</p>
       <h2 class="section-title">Toolbox</h2>
 
       <div class="skills-grid">
@@ -213,7 +214,7 @@
     </section>
 
     <section id="experience" class="section section-alt">
-      <p class="section-label">04 — Experience</p>
+      <p class="section-label">04 / Experience</p>
       <h2 class="section-title">Professional Experience</h2>
 
       <div class="timeline">
@@ -271,7 +272,7 @@
     </section>
 
     <section id="education" class="section">
-      <p class="section-label">05 — Education</p>
+      <p class="section-label">05 / Education</p>
       <h2 class="section-title">Education</h2>
 
       <div class="edu-grid">
@@ -298,7 +299,7 @@
     </section>
 
     <section id="certificates" class="section section-alt">
-      <p class="section-label">06 — Certificates</p>
+      <p class="section-label">06 / Certificates</p>
       <h2 class="section-title">Certificates</h2>
 
       <div class="cert-grid">
@@ -308,36 +309,36 @@
         </div>
         <div class="cert-card reveal">
           <i class="fa-solid fa-cloud cert-icon"></i>
-          <h3>Palo Alto Networks Cybersecurity Academy — Cloud Security Fundamentals</h3>
+          <h3>Palo Alto Networks Cybersecurity Academy: Cloud Security Fundamentals</h3>
           <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
         <div class="cert-card reveal">
           <i class="fa-solid fa-network-wired cert-icon"></i>
-          <h3>Palo Alto Networks Cybersecurity Academy — Network Security Fundamentals</h3>
+          <h3>Palo Alto Networks Cybersecurity Academy: Network Security Fundamentals</h3>
           <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
         <div class="cert-card reveal">
           <i class="fa-solid fa-headset cert-icon"></i>
-          <h3>Palo Alto Networks Cybersecurity Academy — Security Operations Fundamentals</h3>
+          <h3>Palo Alto Networks Cybersecurity Academy: Security Operations Fundamentals</h3>
           <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
         <div class="cert-card reveal">
           <i class="fa-solid fa-lock cert-icon"></i>
-          <h3>Palo Alto Networks Cybersecurity Academy — Cybersecurity Foundation</h3>
+          <h3>Palo Alto Networks Cybersecurity Academy: Cybersecurity Foundation</h3>
           <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
         <div class="cert-card reveal">
           <i class="fa-solid fa-code cert-icon"></i>
-          <h3>Udacity — Advanced Full-Stack Web Development Nanodegree</h3>
+          <h3>Udacity: Advanced Full-Stack Web Development Nanodegree</h3>
           <a href="https://graduation.udacity.com/confirm/JDLNMVFY" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section contact-section">
-      <p class="section-label">07 — Contact</p>
+      <p class="section-label">07 / Contact</p>
       <h2 class="section-title">Let's talk</h2>
-      <p class="about-text">Open to cybersecurity roles from December 2026 — applied cryptography, embedded/IoT security, hardware security.</p>
+      <p class="about-text">Open to cybersecurity roles from December 2026, across applied cryptography, embedded/IoT security, and hardware security.</p>
       <div class="contact-links">
         <a href="mailto:dawoudyoussef23@gmail.com" class="contact-pill"><i class="fa-solid fa-envelope"></i> dawoudyoussef23@gmail.com</a>
         <a href="tel:+393513577516" class="contact-pill"><i class="fa-solid fa-phone"></i> +39 351 357 7516</a>
