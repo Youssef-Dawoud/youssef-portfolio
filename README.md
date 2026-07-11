@@ -1,12 +1,11 @@
-# Youssef Dawoud Portfolio
+# Youssef Dawoud — Portfolio
 
-My personal portfolio and a representation of my career
+Personal portfolio site: applied cryptography, embedded/hardware security, experience, education, and certificates.
 
 ## Link
 
 https://Youssef-Dawoud.github.io/youssef-portfolio/
 
-## Dependencies
+## Stack
 
-- Roboto Font
-- Material Design Bootstrap
+Plain HTML / CSS / JS, no build step. Fonts via Google Fonts, icons via Font Awesome (CDN). Deployed on GitHub Pages.

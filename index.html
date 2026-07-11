@@ -1,456 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Youssef Dawoud</title>
-    <link rel="icon" href="img/code.svg">
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/page1.css" />
-    <link rel="stylesheet" href="css/page2.css" />
-    <link rel="stylesheet" href="css/page3.css" />
-    <link rel="stylesheet" href="css/page4.css" />
-    <link rel="stylesheet" href="css/page5.css" />
-  </head>
-  <body>
-    <div class="page-1 page" id="page-1">
-      <header>
-        <nav class="navbar sticky-top">
-          <div class="container-fluid">
-            <a class="navbar-brand text-light" href="#page-1"><i class="fas fa-code"></i></a>
-            <a class="navbar-text active" href="#page-1">Home</a>
-            <a class="navbar-text" href="#page-2">Projects</a>
-            <a class="navbar-text" href="#page-3">Certificates</a>
-            <a class="navbar-text" href="#page-5">Skills</a>
-            <a class="navbar-text contact-nav" href="#page-4">Contact</a>
-          </div>
-        </nav>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Youssef Dawoud — Applied Cryptography & Embedded Security</title>
+  <meta name="description" content="Youssef Dawoud — Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied cryptography, OpenSSL internals, Trusted Execution Environments, hardware Roots of Trust." />
+  <link rel="icon" href="img/code.svg" />
 
-      <main>
-        <div class="container">
-          <h2 class="text-secondary">Youssef Dawoud</h2>
-          <h1 class="text-black">Cybersecurity Engineer</h1>
-          <div class="svg-div">
-            <svg id="eqBRSJtUTuK1" 
-              xmlns="http://www.w3.org/2000/svg" 
-              xmlns:xlink="http://www.w3.org/1999/xlink" 
-              viewBox="0 0 1085 380" shape-rendering="geometricPrecision" 
-              text-rendering="geometricPrecision"><ellipse rx="536" ry="183.5" 
-              transform="translate(541 188.5)" fill="none" stroke="#bc0000" stroke-width="3"/>
-            </svg>
-            <p class="text-desc">
-              I'm a Cybersecurity Engineer and Master's student at Politecnico di Torino, focused on security for Software-Defined Vehicles (SDV) and automotive middleware.
-            </p>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">YD<span class="cursor">_</span></a>
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">// cybersecurity m.sc. candidate — politecnico di torino</p>
+      <h1>Youssef Dawoud</h1>
+      <h2 class="gradient-text">Applied Cryptography &amp; Embedded Security Engineer</h2>
+      <p class="hero-desc">
+        I build hardware-backed cryptographic infrastructure — redirecting cryptographic
+        operations into Trusted Execution Environments and Roots of Trust, without the
+        application ever knowing the difference.
+      </p>
+      <div class="hero-actions">
+        <a href="assets/YoussefDawoud.pdf" download="Youssef-Dawoud-CV.pdf" class="btn btn-primary">
+          <i class="fa-solid fa-download"></i> Download CV
+        </a>
+        <a href="https://github.com/Youssef-Dawoud" target="_blank" rel="noopener" class="btn btn-ghost">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero-terminal reveal">
+      <div class="terminal-bar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">agnosticssl_engine.c</span>
+      </div>
+      <pre class="terminal-body"><code><span class="c-comment">// backend-agnostic dispatch — application layer is unaware</span>
+<span class="c-type">EVP_PKEY</span> *eph_key = <span class="c-fn">ecdh_generate_ephemeral</span>(<span class="c-fn">chacha20_rng</span>());
+<span class="c-type">engine_dispatch</span>(<span class="c-const">ECDSA_SIGN</span>, eph_key, .backend = <span class="c-const">OP_TEE</span>);
+<span class="c-comment">// same call, zero changes, different silicon:</span>
+<span class="c-type">engine_dispatch</span>(<span class="c-const">ECDSA_SIGN</span>, eph_key, .backend = <span class="c-const">OPENTITAN</span>);</code></pre>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="about" class="section">
+      <p class="section-label">01 — About</p>
+      <h2 class="section-title">What I actually do</h2>
+      <div class="about-grid">
+        <p class="about-text">
+          I'm a Cybersecurity Engineering Master's student at Politecnico di Torino,
+          graduating December 2026 with a 27.3/30 average. My focus is applied
+          cryptography and hardware-backed security: making cryptographic operations
+          portable across trusted hardware backends — Trusted Execution Environments,
+          silicon Roots of Trust, and hardware accelerators — without rewriting the
+          software that depends on them.
+        </p>
+        <p class="about-text">
+          Before Italy, I worked as a Full-Stack Engineer building production systems:
+          a real-time chat platform on WebSockets, React and React Native apps, and
+          Node.js backends deployed on AWS. That background is why I think about
+          security in terms of how systems are actually built, not just how they're
+          attacked. I'm currently a Teaching Assistant for Hardware &amp; Wireless
+          Security and Web Applications at Polito, selected after scoring 30/30 in
+          both courses.
+        </p>
+      </div>
+      <div class="lang-row">
+        <span class="lang-pill">English — C1 (IELTS)</span>
+        <span class="lang-pill">Italian — B1, improving</span>
+      </div>
+    </section>
+
+    <section id="research" class="section section-alt">
+      <p class="section-label">02 — Research</p>
+      <h2 class="section-title">Master's Thesis: AgnosticSSL</h2>
+      <div class="research-card reveal">
+        <div class="research-header">
+          <h3>Extending a backend-agnostic OpenSSL engine</h3>
+          <div class="tag-row">
+            <span class="tag">OpenSSL Engine</span>
+            <span class="tag">OP-TEE</span>
+            <span class="tag">OpenTitan / RISC-V</span>
+            <span class="tag">GlobalPlatform TEE Client API</span>
+            <span class="tag">ECDSA</span>
+            <span class="tag">Ephemeral ECDH</span>
+            <span class="tag">ChaCha20 RNG</span>
           </div>
         </div>
-        <a class="btn btn-rounded text-light download" href="assets/YoussefDawoud.pdf" download="Youssef-Dawoud-CV.pdf">Download CV <i class="fas fa-cloud-download-alt"></i></a>
-        <a href="#page-4" role="button" class="btn btn-rounded text-light contact">Contact <i class="fas fa-angle-down"></i></a>
-        <a href="#page-2" role="button" class="btn btn-rounded text-light project">Browse Projects <i class="fas fa-angle-down"></i></a>
-      </main>
-    </div>
-    <div class="page-2 page" id="page-2">
-      <main>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-2">
-          <div class="col">
-            <div class="card h-100 card-border">
-              <div class="card-body">
-                <h5 class="card-title">Linux Shell</h5>
-                <h6 class="card-subtitle mb-2 text-muted">C - Lex - Yacc</h6>
-                <p class="card-text">An implementation of the linux terminal using C for executing commands and piplining, lex and yacc for parsing.</p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/linux-terminal" class="card-link text-danger" target="_blank">Project link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Store Front API</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Web API - postgreSQL database - Typecript - Unit testing - node.js</h6>
-                <p class="card-text">A fuly functional back-end for a commercial store that uses postgreSQL, this includes API's for all necessary functions, login tokens and unit testing using jasmine.</p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/store-api" class="card-link" target="_blank">Project link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 card-border">
-              <div class="card-body">
-                <h5 class="card-title">Paint</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Java - Java swing</h6>
-                <p class="card-text">A Painting program includes popular shapes, ability to erase, undo and redo.</p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/Paint" class="card-link text-danger" target="_blank">Project link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Image Processing Api</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Typecript - node.js</h6>
-                <p class="card-text">A web API to resize image into new dimentions with minimum loss of quality.</p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/image-processing-api" class="card-link" target="_blank">Project link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">AWS-hosted fullstack application</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Amazon web services - CircleCI</h6>
-                <p class="card-text">A front and back-end website that is hosted on AWS, the database is postgre hosted on RDS, the front-end hosted on s3 bucket and the back-end hosted on elastic beanstalk. The program is pushed and built automatically using CircleCI
-                  <br>The program code was provided as part of a course and my assignment was to use AWS to host it and CircleCI to build it.
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/aws-fullstack" class="card-link" target="_blank">Project link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Sorting Algorithms</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Algorithm design - Python</h6>
-                <p class="card-text">An implementation of popular sorting Algorithms including Merge-sort, selection-sort, quick-sort and hybrid merge-selection-sort, Also an algorithm to find the kth smallest element in array. All using python
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/sorting_algorithms" class="card-link" target="_blank">Project link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 card-border">
-              <div class="card-body">
-                <h5 class="card-title">Dawoud App (Wordle remake)</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Flutter - Android Development</h6>
-                <p class="card-text">An Android application developed by me and published by Mohamed Wageh.<br> This is a word guessing game, where you guess a 5 letter word in 6 tries, after each try the game gives you clues about how close your guess was to the correct word. In the original game the word was chosen everyday, in this remake the word is choosen at random each time the user starts a new game. 
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/wordle" class="card-link text-danger" target="_blank">Project link</a>
-                <a href="https://play.google.com/store/apps/details?id=com.dawordPac.daword" class="card-link text-danger" target="_blank">Playstore link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Car rental service full-stack website</h5>
-                <h6 class="card-subtitle mb-2 text-muted">MySQL - PHP - html - css - javascript - Ajax - Web API</h6>
-                <p class="card-text">A website for a car rental company, this was a group project and the backeend was made entirely by me. The back-end was made as modular as possible and easy to understand using POST API's for security and login validations. Complicated SQL commands were made avaialable to the user with 1 click.
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/car-rental-service" class="card-link" target="_blank">Project link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Link integrety Checker</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Java - Multithreading</h6>
-                <p class="card-text">A java program to check integrety of sites before visiting them, it has customizable link depth and utilizes computer threads to reduce runtime.
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/Link-Integrety-Checker" class="card-link" target="_blank">Project link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Spell Checking</h5>
-                <h6 class="card-subtitle mb-2 text-muted">C - BST</h6>
-                <p class="card-text">A C program that implements Binary Search Trees and inputs all the english dictionary into BST, takes user sentences and checks each word in the tree.
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/Spell-Checking" class="card-link" target="_blank">Project link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 card-border">
-              <div class="card-body">
-                <h5 class="card-title">Infix Evaluation</h5>
-                <h6 class="card-subtitle mb-2 text-muted">C - Stacks</h6>
-                <p class="card-text">A C program that takes a mathematical calculation from the user, check correctnessm outputs the correct order of operations and executes it.
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/Infix-Evaluation" class="card-link text-danger" target="_blank">Project link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Red - Black trees dictionary</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Python - Red Black Trees</h6>
-                <p class="card-text">An implementation for red-black trees using python and dictionary is inserted to test the implementation.
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="https://github.com/Youssef-Dawoud/red-black-trees-dictionary" class="card-link" target="_blank">Project link</a>
-              </div>
-            </div>
+        <p>
+          AgnosticSSL is a modular OpenSSL engine that transparently redirects
+          cryptographic operations into heterogeneous trusted environments —
+          currently OP-TEE and OpenTitan, a RISC-V silicon Root of Trust — so
+          applications get hardware-backed isolation with zero code changes.
+          On OpenTitan, cryptographic offload has shown speedups of up to
+          40&times; for SHA-256 and 82&times; for AES-256-CBC over software execution.
+        </p>
+        <p>
+          I'm continuing this work, building on the foundation laid by T. Sayarmoafi
+          (Politecnico di Torino, 2025) under Prof. L. Barbierato. My contribution
+          broadens the engine's cryptographic coverage toward full TLS 1.3 support:
+          elliptic-curve signatures (ECDSA), ephemeral key exchange (ECDH), and a
+          ChaCha20-based random number generator for secure ephemeral key generation.
+        </p>
+        <p class="research-note">Supervisor: Prof. L. Barbierato — Politecnico di Torino</p>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <p class="section-label">03 — Skills</p>
+      <h2 class="section-title">Toolbox</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h3>Applied Cryptography</h3>
+          <div class="tag-row">
+            <span class="tag">OpenSSL Engine / Provider</span>
+            <span class="tag">ECDSA</span>
+            <span class="tag">Ephemeral ECDH</span>
+            <span class="tag">ChaCha20</span>
+            <span class="tag">AES</span>
+            <span class="tag">RSA</span>
+            <span class="tag">SHA-256</span>
           </div>
         </div>
-      </main>
-    </div>
-    <div class="page-3 page" id="page-3">
-      <main class="container">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-          <div class="col">
-            <div class="card h-100 w-85">
-              <img src="img/cert1.png" class="card-img-top" alt="Skyscrapers"/>
-              <div class="card-body">
-                <h5 class="card-title">Web Development Challenger Track</h5>
-                <p class="card-text">
-                  A month long course introduced by Udacity centered around getting familiar with web development.
-                  <br>Validation Code: MAFKUEDD
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">September 2021</small>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 w-85">
-              <img src="img/cert2.png" class="card-img-top" alt="Los Angeles Skyscrapers"/>
-              <div class="card-body">
-                <h5 class="card-title">Cloud Security Fundamentals</h5>
-                <p class="card-text">
-                  A week long training introduced by Palo Alto about the fundamental concepts in cloud security.
-                  <br>Validation Code: bsOCM1ezZP
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">September 2021</small>
-                <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" class="card-link" target="_blank">Validation Link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 w-85">
-              <img src="img/cert3.png" class="card-img-top" alt="Palm Springs Road"/>
-              <div class="card-body">
-                <h5 class="card-title">Cybersecurity Foundation</h5>
-                <p class="card-text">
-                  A week long training introduced by Palo Alto about the foundations of cybersecurity and protection of electronic devices from malicious attacks.
-                  <br>Validation Code: RpFgj0DqEd
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">September 2021</small>
-                <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" class="card-link" target="_blank">Validation Link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 w-85">
-              <img src="img/cert4.png" class="card-img-top" alt="Skyscrapers"/>
-              <div class="card-body">
-                <h5 class="card-title">Front End Web Development Professional</h5>
-                <p class="card-text">
-                  A three month course introduced by Udacity about important web development concepts like Web APIs and asynchronus javascript.
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">October 2021</small>
-                <a href="https://graduation.udacity.com/confirm/9QZDVCAJ" class="card-link" target="_blank">Validation Link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 w-85">
-              <img src="img/cert5.png" class="card-img-top" alt="Los Angeles Skyscrapers"/>
-              <div class="card-body">
-                <h5 class="card-title">Advanced Full-Stack Web Development</h5>
-                <p class="card-text">A six month course introduced by Udacity that teaches invaluable concepts about web development including hosting a full-stack website, back-end development using nodejs, agile development and the CI/CD deployment process.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">May 2022</small>
-                <a href="https://graduation.udacity.com/confirm/JDLNMVFY" class="card-link" target="_blank">Validation Link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 w-85">
-              <img src="img/cert6.png" class="card-img-top" alt="Palm Springs Road"/>
-              <div class="card-body">
-                <h5 class="card-title">Network Security Fundamentals</h5>
-                <p class="card-text">
-                  A week long training introduced by Palo Alto about the fundamentals of network security and how to defend common network devices like routers.
-                  <br>Validation Code: orgeeA6nG9
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">September 2021</small>
-                <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" class="card-link" target="_blank">Validation Link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col filler"></div>
-          <div class="col">
-            <div class="card h-100 w-85">
-              <img src="img/cert7.png" class="card-img-top" alt="Palm Springs Road"/>
-              <div class="card-body">
-                <h5 class="card-title">Security Operations Fundamentals</h5>
-                <p class="card-text">
-                  A week long training introduced by Palo Alto about the fundamentals of secops and how teams work together to ensure the security of enite systems.
-                  <br>Validation Code: hLK5gn5hBf
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">September 2021</small>
-                <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" class="card-link" target="_blank">Validation Link</a>
-              </div>
-            </div>
+        <div class="skill-group reveal">
+          <h3>Trusted Hardware &amp; Root of Trust</h3>
+          <div class="tag-row">
+            <span class="tag">TEE (OP-TEE)</span>
+            <span class="tag">OpenTitan</span>
+            <span class="tag">GlobalPlatform TEE Client API</span>
+            <span class="tag">RISC-V</span>
           </div>
         </div>
-      </main>
-    </div>
-    <div class="page-5 page" id="page-5">
-      <main>
-        <center>
-          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-2">
-            <div class="col">
-              <a href="#!">
-                <img src="img/vue.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/html.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/css.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/angular.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/aws.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/javascript.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/flutter.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/wordpress.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/scss.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/java.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/git.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/postgre.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/php.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/python.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/mysql.svg" class="shadow-icon"/>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#!">
-                <img src="img/API.svg" class="shadow-icon"/>
-              </a>
-            </div>
+        <div class="skill-group reveal">
+          <h3>Security &amp; Offensive Tools</h3>
+          <div class="tag-row">
+            <span class="tag">radare2</span>
+            <span class="tag">pwntools</span>
+            <span class="tag">Burp Suite</span>
           </div>
-        </center>
-      </main>
-    </div>
-    <div class="page-4" id="page-4">
-      <main>
-        <a class="btn btn-lg text-white" style="background-color: #25a4d3;" href="mailto:dawoudyoussef23@gmail.com" target="_blank" role="button">
-          <i class="fas fa-envelope fa-lg"></i>
-        </a>
-        <a class="btn btn-lg text-white" style="background-color: #25d366;" href="https://wa.me/+393513577516" target="_blank" role="button">
-          <i class="fab fa-whatsapp fa-lg"></i>
-        </a>
-        <a class="btn btn-lg text-white" style="background-color: #ffac44;" href="https://stackoverflow.com/users/13351163/deathpancake" target="_blank"  role="button">
-          <i class="fab fa-stack-overflow fa-lg"></i>
-        </a>
-        <a class="btn btn-lg text-white" style="background-color: #0082ca;" href="https://www.linkedin.com/in/youssef-dawoud25/" target="_blank" role="button">
-          <i class="fab fa-linkedin-in fa-lg"></i>
-        </a>
-        <a class="btn btn-lg text-white" style="background-color: #333333;" href="https://github.com/Youssef-Dawoud" target="_blank" role="button">
-          <i class="fab fa-github fa-lg"></i>
-        </a>
-        <a class="btn btn-lg text-white" style="background-color: #0082ca;" href="tel:+393513577516" target="_blank" role="button">
-          <i class="fas fa-phone fa-lg"></i>
-        </a>
-      </main>
-    </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Programming Languages</h3>
+          <div class="tag-row">
+            <span class="tag">C / C++</span>
+            <span class="tag">Go</span>
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">TypeScript</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Backend &amp; Frameworks</h3>
+          <div class="tag-row">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">Nest.js</span>
+            <span class="tag">PHP</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Frontend &amp; Mobile</h3>
+          <div class="tag-row">
+            <span class="tag">React.js</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">React Native</span>
+            <span class="tag">Flutter</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Cloud &amp; DevOps</h3>
+          <div class="tag-row">
+            <span class="tag">AWS (EC2, S3, Elastic Beanstalk)</span>
+            <span class="tag">CI/CD (CircleCI)</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Tools</h3>
+          <div class="tag-row">
+            <span class="tag">Git</span>
+            <span class="tag">ESLint</span>
+            <span class="tag">Figma</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer>
+    <section id="experience" class="section section-alt">
+      <p class="section-label">04 — Experience</p>
+      <h2 class="section-title">Professional Experience</h2>
 
-    </footer>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-date">02/2026 – 06/2026</div>
+          <div class="timeline-content">
+            <h3>Teaching Assistant</h3>
+            <p class="timeline-meta">Politecnico di Torino · Turin, Italy</p>
+            <ul>
+              <li>Assisted professors and supported students during laboratory sessions for Hardware &amp; Wireless Security and Web Applications.</li>
+              <li>Selected as Teaching Assistant after achieving 30/30 in both courses.</li>
+            </ul>
+          </div>
+        </div>
 
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-  </body>
+        <div class="timeline-item reveal">
+          <div class="timeline-date">10/2023 – 10/2024</div>
+          <div class="timeline-content">
+            <h3>Fullstack Engineer</h3>
+            <p class="timeline-meta">Tech Hive · Alexandria, Egypt</p>
+            <ul>
+              <li>Developed a real-time chat system from scratch using WebSockets.</li>
+              <li>Built responsive web and mobile apps with React.js and React Native.</li>
+              <li>Developed back-end services for web applications using Node.js.</li>
+              <li>Deployed full-stack web applications on AWS EC2.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-date">07/2023 – 10/2023</div>
+          <div class="timeline-content">
+            <h3>Intern</h3>
+            <p class="timeline-meta">Tech Hive · Alexandria, Egypt</p>
+            <ul>
+              <li>Launched Android applications on the Google Play Store.</li>
+              <li>Managed HTTPS certificates for production deployments.</li>
+              <li>Discovered a server bug that improved a client's system uptime by 50%.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-date">07/2025 – Present</div>
+          <div class="timeline-content">
+            <h3>Counselor</h3>
+            <p class="timeline-meta">Camp Adventure · Walsrode, Germany</p>
+            <ul>
+              <li>Led international youth groups in high-pressure environments, fostering teamwork and conflict resolution.</li>
+              <li>Managed technical safety protocols and emergency procedures (ERCA Certification).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <p class="section-label">05 — Education</p>
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <h3>Master's Degree in Cybersecurity</h3>
+          <p class="timeline-meta">Politecnico di Torino · Turin, Italy</p>
+          <p class="timeline-meta">09/2024 – Present</p>
+          <ul>
+            <li>98/120 credits completed, weighted average 27.3/30.</li>
+            <li>Expected to graduate December 2026.</li>
+            <li>Thesis: extending <strong>AgnosticSSL</strong>, a backend-agnostic OpenSSL engine for cryptographic offload to Trusted Execution Environments and hardware Roots of Trust. Advisor: Prof. L. Barbierato.</li>
+          </ul>
+        </div>
+        <div class="edu-card reveal">
+          <h3>Bachelor's Degree in Computer and Communications Engineering</h3>
+          <p class="timeline-meta">Alexandria University · Alexandria, Egypt</p>
+          <p class="timeline-meta">09/2019 – 07/2024</p>
+          <ul>
+            <li>Cumulative GPA: 3.46/4.</li>
+            <li>Graduation project: end-to-end encrypted media-sharing platform with Perfect Forward Secrecy.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates" class="section section-alt">
+      <p class="section-label">06 — Certificates</p>
+      <h2 class="section-title">Certificates</h2>
+
+      <div class="cert-grid">
+        <div class="cert-card reveal">
+          <i class="fa-solid fa-shield-halved cert-icon"></i>
+          <h3>Thales CipherTrust Data Security Platform (CDSP) Core Engineer</h3>
+        </div>
+        <div class="cert-card reveal">
+          <i class="fa-solid fa-cloud cert-icon"></i>
+          <h3>Palo Alto Networks Cybersecurity Academy — Cloud Security Fundamentals</h3>
+          <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <i class="fa-solid fa-network-wired cert-icon"></i>
+          <h3>Palo Alto Networks Cybersecurity Academy — Network Security Fundamentals</h3>
+          <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <i class="fa-solid fa-headset cert-icon"></i>
+          <h3>Palo Alto Networks Cybersecurity Academy — Security Operations Fundamentals</h3>
+          <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <i class="fa-solid fa-lock cert-icon"></i>
+          <h3>Palo Alto Networks Cybersecurity Academy — Cybersecurity Foundation</h3>
+          <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <i class="fa-solid fa-code cert-icon"></i>
+          <h3>Udacity — Advanced Full-Stack Web Development Nanodegree</h3>
+          <a href="https://graduation.udacity.com/confirm/JDLNMVFY" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <p class="section-label">07 — Contact</p>
+      <h2 class="section-title">Let's talk</h2>
+      <p class="about-text">Open to cybersecurity roles from December 2026 — applied cryptography, embedded/IoT security, hardware security.</p>
+      <div class="contact-links">
+        <a href="mailto:dawoudyoussef23@gmail.com" class="contact-pill"><i class="fa-solid fa-envelope"></i> dawoudyoussef23@gmail.com</a>
+        <a href="tel:+393513577516" class="contact-pill"><i class="fa-solid fa-phone"></i> +39 351 357 7516</a>
+        <a href="https://github.com/Youssef-Dawoud" target="_blank" rel="noopener" class="contact-pill"><i class="fa-brands fa-github"></i> Youssef-Dawoud</a>
+        <a href="https://www.linkedin.com/in/youssef-dawoud25/" target="_blank" rel="noopener" class="contact-pill"><i class="fa-brands fa-linkedin"></i> youssef-dawoud25</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Built &amp; deployed on GitHub Pages. &copy; <span id="year"></span> Youssef Dawoud.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
 </html>
-<script type="text/javascript" src="js/index.js"></script>
