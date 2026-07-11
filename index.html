@@ -53,18 +53,6 @@
         <a href="#contact" class="btn btn-ghost">Get in touch</a>
       </div>
     </div>
-
-    <div class="hero-terminal reveal">
-      <div class="terminal-bar">
-        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-        <span class="terminal-title">agnosticssl_engine.c</span>
-      </div>
-      <pre class="terminal-body"><code><span class="c-comment">// backend-agnostic dispatch: application layer is unaware</span>
-<span class="c-type">EVP_PKEY</span> *eph_key = <span class="c-fn">ecdh_generate_ephemeral</span>(<span class="c-fn">chacha20_rng</span>());
-<span class="c-type">engine_dispatch</span>(<span class="c-const">ECDSA_SIGN</span>, eph_key, .backend = <span class="c-const">OP_TEE</span>);
-<span class="c-comment">// same call, zero changes, different silicon:</span>
-<span class="c-type">engine_dispatch</span>(<span class="c-const">ECDSA_SIGN</span>, eph_key, .backend = <span class="c-const">OPENTITAN</span>);</code></pre>
-    </div>
   </header>
 
   <main>
