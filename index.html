@@ -4,8 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Youssef Dawoud | Cybersecurity Engineer</title>
-  <meta name="description" content="Youssef Dawoud, Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied security research, full-stack engineering, and cryptographic hardware offload." />
+  <meta name="description" content="Youssef Dawoud, Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied security research, offensive security (binary & web exploitation), and cryptographic hardware offload." />
   <link rel="icon" href="img/code.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Youssef Dawoud | Cybersecurity Engineer" />
+  <meta property="og:description" content="Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied cryptography, hardware-backed security research, and 60+ offensive security CTF write-ups." />
+  <meta property="og:url" content="https://youssef-dawoud.github.io/youssef-portfolio/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Youssef Dawoud | Cybersecurity Engineer" />
+  <meta name="twitter:description" content="Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied cryptography, hardware-backed security research, and 60+ offensive security CTF write-ups." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -23,6 +31,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
+        <li><a href="#labs">Labs</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
@@ -120,8 +129,79 @@
       </div>
     </section>
 
+    <section id="labs" class="section section-alt">
+      <p class="section-label">03 / Security Labs</p>
+      <h2 class="section-title">CTF &amp; Exploit Write-ups</h2>
+      <p class="about-text" style="max-width: 70ch; margin-bottom: 20px;">
+        68 solved challenges from two Politecnico di Torino security courses &mdash; Offensive
+        Security and Security Verification and Testing &mdash; written up with full vulnerability
+        analysis and working exploit code, not just flags.
+      </p>
+      <div class="lang-row" style="margin-top: 0; margin-bottom: 36px;">
+        <span class="lang-pill">35 binary exploitation</span>
+        <span class="lang-pill">25 web</span>
+        <span class="lang-pill">8 reverse engineering</span>
+      </div>
+
+      <div class="labs-grid">
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/offensive-security/web/06-jwt-attacks/key-vault" target="_blank" rel="noopener">
+          <i class="fa-solid fa-key cert-icon"></i>
+          <h3>JWT <code>jku</code> Header Injection</h3>
+          <p>Self-hosted a forged JWKS document to defeat RS256 signature verification and bypass authentication as admin.</p>
+          <div class="tag-row"><span class="tag">JWT</span><span class="tag">Auth Bypass</span></div>
+          <span class="lab-link">Read write-up <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/offensive-security/pwn/05-heap-exploitation/whisper" target="_blank" rel="noopener">
+          <i class="fa-solid fa-microchip cert-icon"></i>
+          <h3>Heap Exploitation: Whisper</h3>
+          <p>Chained an unsorted-bin libc leak with tcache poisoning to overwrite <code>__free_hook</code> and pop a shell.</p>
+          <div class="tag-row"><span class="tag">glibc 2.31</span><span class="tag">Tcache Poisoning</span></div>
+          <span class="lab-link">Read write-up <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/offensive-security/pwn/06-mixed-recap-aquabank/aquabank-safe" target="_blank" rel="noopener">
+          <i class="fa-solid fa-arrows-turn-to-dots cert-icon"></i>
+          <h3>Stack Pivot: AquaBank Safe</h3>
+          <p>16 bytes of overflow wasn't enough for a ROP chain, so I staged one in a global buffer and pivoted into it with <code>leave; ret</code>.</p>
+          <div class="tag-row"><span class="tag">ROP</span><span class="tag">Stack Pivot</span></div>
+          <span class="lab-link">Read write-up <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/offensive-security/web/04-command-injection/virus-vault" target="_blank" rel="noopener">
+          <i class="fa-solid fa-terminal cert-icon"></i>
+          <h3>Blind Command Injection</h3>
+          <p>Built a time-based extraction oracle over a file-upload endpoint, with a double-check pass to filter out network-jitter false positives.</p>
+          <div class="tag-row"><span class="tag">Blind CMDI</span><span class="tag">Timing Side-Channel</span></div>
+          <span class="lab-link">Read write-up <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/offensive-security/web/03-sql-injection/department-wiki" target="_blank" rel="noopener">
+          <i class="fa-solid fa-database cert-icon"></i>
+          <h3>Stacked-Query SQLi</h3>
+          <p>Used a piggy-backed <code>INSERT</code> to relocate a secret config value into a publicly-rendered table instead of reading it directly.</p>
+          <div class="tag-row"><span class="tag">SQL Injection</span><span class="tag">SQLite</span></div>
+          <span class="lab-link">Read write-up <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/security-verification-testing/reverse-engineering/hidden-pyinstaller" target="_blank" rel="noopener">
+          <i class="fa-solid fa-magnifying-glass cert-icon"></i>
+          <h3>Unpacking a Frozen Python Binary</h3>
+          <p>Recovered the embedded bytecode from a PyInstaller-frozen ELF disguised as a 5.7MB "crackme".</p>
+          <div class="tag-row"><span class="tag">Reverse Engineering</span><span class="tag">PyInstaller</span></div>
+          <span class="lab-link">Read write-up <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+      </div>
+
+      <div class="hero-actions" style="margin-top: 32px;">
+        <a href="https://github.com/Youssef-Dawoud/ctf-writeups" target="_blank" rel="noopener" class="btn btn-ghost">
+          <i class="fa-brands fa-github"></i> View all 68 write-ups on GitHub
+        </a>
+      </div>
+    </section>
+
     <section id="skills" class="section">
-      <p class="section-label">03 / Skills</p>
+      <p class="section-label">04 / Skills</p>
       <h2 class="section-title">Toolbox</h2>
 
       <div class="skills-grid">
@@ -202,12 +282,12 @@
     </section>
 
     <section id="experience" class="section section-alt">
-      <p class="section-label">04 / Experience</p>
+      <p class="section-label">05 / Experience</p>
       <h2 class="section-title">Professional Experience</h2>
 
       <div class="timeline">
         <div class="timeline-item reveal">
-          <div class="timeline-date">02/2026 – 06/2026</div>
+          <div class="timeline-date">02/2026 – 07/2026</div>
           <div class="timeline-content">
             <h3>Teaching Assistant</h3>
             <p class="timeline-meta">Politecnico di Torino · Turin, Italy</p>
@@ -260,7 +340,7 @@
     </section>
 
     <section id="education" class="section">
-      <p class="section-label">05 / Education</p>
+      <p class="section-label">06 / Education</p>
       <h2 class="section-title">Education</h2>
 
       <div class="edu-grid">
@@ -287,7 +367,7 @@
     </section>
 
     <section id="certificates" class="section section-alt">
-      <p class="section-label">06 / Certificates</p>
+      <p class="section-label">07 / Certificates</p>
       <h2 class="section-title">Certificates</h2>
 
       <div class="cert-grid">
@@ -324,7 +404,7 @@
     </section>
 
     <section id="contact" class="section contact-section">
-      <p class="section-label">07 / Contact</p>
+      <p class="section-label">08 / Contact</p>
       <h2 class="section-title">Let's talk</h2>
       <p class="about-text">Open to cybersecurity roles from December 2026, across applied cryptography, embedded/IoT security, and hardware security.</p>
       <div class="contact-links">

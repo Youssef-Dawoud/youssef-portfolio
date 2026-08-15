@@ -259,6 +259,48 @@ h1, h2, h3 { font-family: var(--heading); font-weight: 600; letter-spacing: -0.0
   border-radius: 6px;
 }
 
+/* LABS / CTF WRITE-UPS */
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.lab-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 24px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.lab-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.lab-card h3 { font-size: 1rem; margin-bottom: 10px; line-height: 1.35; }
+.lab-card p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+.lab-card code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: rgba(167, 139, 250, 0.1);
+  color: var(--accent-2);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.lab-card .tag-row { margin-bottom: 16px; }
+.lab-link {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 /* SKILLS */
 .skills-grid {
   display: grid;
@@ -398,6 +440,7 @@ h1, h2, h3 { font-family: var(--heading); font-weight: 600; letter-spacing: -0.0
   .skills-grid { grid-template-columns: 1fr; }
   .edu-grid { grid-template-columns: 1fr; }
   .cert-grid { grid-template-columns: 1fr 1fr; }
+  .labs-grid { grid-template-columns: 1fr 1fr; }
   .timeline-item { grid-template-columns: 1fr; gap: 6px; }
   .nav-links {
     position: fixed;
@@ -415,4 +458,5 @@ h1, h2, h3 { font-family: var(--heading); font-weight: 600; letter-spacing: -0.0
 }
 @media (max-width: 560px) {
   .cert-grid { grid-template-columns: 1fr; }
+  .labs-grid { grid-template-columns: 1fr; }
 }
