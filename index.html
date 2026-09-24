@@ -4,21 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Youssef Dawoud | Cybersecurity Engineer</title>
-  <meta name="description" content="Youssef Dawoud, Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied security research, offensive security (binary & web exploitation), and cryptographic hardware offload." />
+  <meta name="description" content="Youssef Dawoud, Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied cryptography, TEE-backed crypto offload for OpenSSL, and offensive security (binary & web exploitation)." />
   <link rel="icon" href="img/code.svg" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Youssef Dawoud | Cybersecurity Engineer" />
-  <meta property="og:description" content="Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied cryptography, hardware-backed security research, and 60+ offensive security CTF write-ups." />
+  <meta property="og:description" content="Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied cryptography, TEE-backed OpenSSL crypto offload, and 60+ offensive security CTF write-ups." />
   <meta property="og:url" content="https://youssef-dawoud.github.io/youssef-portfolio/" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Youssef Dawoud | Cybersecurity Engineer" />
-  <meta name="twitter:description" content="Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied cryptography, hardware-backed security research, and 60+ offensive security CTF write-ups." />
+  <meta name="twitter:description" content="Cybersecurity M.Sc. candidate at Politecnico di Torino. Applied cryptography, TEE-backed OpenSSL crypto offload, and 60+ offensive security CTF write-ups." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .research-list { color: var(--text-dim); margin: 0 0 20px; list-style: none; padding: 0; }
+    .research-list li { margin-bottom: 8px; padding-left: 16px; position: relative; }
+    .research-list li::before { content: '›'; position: absolute; left: 0; color: var(--accent); }
+    .cert-card p { color: var(--text-dim); font-size: 0.85rem; line-height: 1.5; }
+  </style>
 </head>
 <body>
 
@@ -48,8 +54,8 @@
       <h2 class="gradient-text">Cybersecurity Engineer</h2>
       <p class="hero-desc">
         M.Sc. candidate in Cybersecurity at Politecnico di Torino. My background spans
-        full-stack engineering and applied security, and I'm currently extending academic
-        research on cryptographic hardware offload. Still exploring where in security I
+        full-stack engineering and applied security, and my thesis work moves an
+        application's cryptography into a Trusted Execution Environment through OpenSSL. Still exploring where in security I
         want to specialize next, and open to that changing.
       </p>
       <div class="hero-actions">
@@ -72,11 +78,11 @@
       <div class="about-grid">
         <p class="about-text">
           I'm a Cybersecurity Engineering Master's student at Politecnico di Torino,
-          graduating December 2026 with a 27.3/30 average. My focus is applied
-          cryptography and hardware-backed security: making cryptographic operations
-          portable across trusted hardware backends: Trusted Execution Environments,
-          silicon Roots of Trust, and hardware accelerators, without rewriting the
-          software that depends on them.
+          graduating November 2026 with a 27.41/30 average. My work sits where applied
+          cryptography meets systems security: my thesis extends an OpenSSL engine that
+          moves an application's cryptography into a Trusted Execution Environment
+          without changing the application, as part of a security assessment of
+          middleware for software-defined vehicles.
         </p>
         <p class="about-text">
           Before Italy, I worked as a Full-Stack Engineer building production systems:
@@ -88,10 +94,11 @@
           both courses.
         </p>
         <p class="about-text">
-          Right now I'm finishing my thesis and actively interviewing for cybersecurity
-          roles starting December 2026, while sharpening my offensive-security skills
-          through CTF practice, binary exploitation, web, and reverse engineering
-          challenges, written up in full on GitHub.
+          Right now I'm finishing my thesis and looking for security engineering roles
+          starting after I graduate in November 2026, in Italy, across Europe or remote.
+          I'm authorized to work in Italy. Alongside that I keep sharpening my
+          offensive-security skills through CTF practice (binary exploitation, web and
+          reverse engineering), written up in full on GitHub.
         </p>
       </div>
       <div class="lang-row">
@@ -102,36 +109,40 @@
 
     <section id="research" class="section section-alt">
       <p class="section-label">02 / Research</p>
-      <h2 class="section-title">Master's Thesis: AgnosticSSL</h2>
+      <h2 class="section-title">Master's Thesis</h2>
       <div class="research-card reveal">
         <div class="research-header">
-          <h3>Extending a backend-agnostic OpenSSL engine</h3>
+          <h3>Security and Trustworthiness Assessment of Middleware Architectures for Software-Defined Vehicles</h3>
           <div class="tag-row">
-            <span class="tag">OpenSSL Engine</span>
-            <span class="tag">OP-TEE</span>
-            <span class="tag">OpenTitan / RISC-V</span>
+            <span class="tag">OpenSSL ENGINE</span>
             <span class="tag">GlobalPlatform TEE Client API</span>
+            <span class="tag">OP-TEE</span>
+            <span class="tag">Arm TrustZone</span>
+            <span class="tag">Linux kernel crypto API</span>
+            <span class="tag">TLS 1.2 / 1.3</span>
             <span class="tag">ECDSA</span>
             <span class="tag">Ephemeral ECDH</span>
             <span class="tag">ChaCha20 RNG</span>
+            <span class="tag">Eclipse S-CORE</span>
+            <span class="tag">TARA</span>
           </div>
         </div>
         <p>
-          AgnosticSSL is a modular OpenSSL engine that transparently redirects
-          cryptographic operations into heterogeneous trusted environments,
-          currently OP-TEE and OpenTitan (a RISC-V silicon Root of Trust), so
-          applications get hardware-backed isolation with zero code changes.
-          On OpenTitan, cryptographic offload has shown speedups of up to
-          40&times; for SHA-256 and 82&times; for AES-256-CBC over software execution.
+          The thesis assesses the security of middleware for software-defined vehicles
+          (Eclipse S-CORE). My implementation work builds on an existing OpenSSL engine
+          (prior work by T. Sayarmoafi, Politecnico di Torino, 2025) that intercepts an
+          application's crypto calls and forwards them to an isolated execution context
+          through the GlobalPlatform TEE Client API, so applications get isolated
+          cryptography with zero code changes.
         </p>
-        <p>
-          I'm continuing this work, building on the foundation laid by T. Sayarmoafi
-          (Politecnico di Torino, 2025) under Prof. L. Barbierato. My contribution
-          broadens the engine's cryptographic coverage toward full TLS 1.3 support:
-          elliptic-curve signatures (ECDSA), ephemeral key exchange (ECDH), and a
-          ChaCha20-based random number generator for secure ephemeral key generation.
-        </p>
-        <p class="research-note">Supervisor: Prof. L. Barbierato, Politecnico di Torino</p>
+        <ul class="research-list">
+          <li>Extended the engine with context and session handling, working on both OpenSSL 1.1.1 and 3.x.</li>
+          <li>Implemented ECDSA signing, ephemeral ECDH key exchange and a ChaCha20-based RNG, backed by a Linux kernel module acting as the TEE through the kernel crypto API.</li>
+          <li>Validated with 99 automated byte-for-byte checks against stock OpenSSL (0 B to 5 MB) and live TLS 1.2/1.3 handshakes, instrumented to prove the engine, not OpenSSL's silent software fallback, did the work.</li>
+          <li>Wrote a cycle-accurate benchmark harness (RDTSC, core-pinned, calibrated) to measure engine overhead against native OpenSSL.</li>
+          <li>Now porting the backend to a real OP-TEE Trusted Application on Arm TrustZone for Eclipse S-CORE, alongside a Threat Analysis and Risk Assessment (TARA) of the middleware.</li>
+        </ul>
+        <p class="research-note">Advisor: Prof. L. Barbierato, Politecnico di Torino</p>
       </div>
     </section>
 
@@ -139,8 +150,8 @@
       <p class="section-label">03 / Security Labs</p>
       <h2 class="section-title">CTF &amp; Exploit Write-ups</h2>
       <p class="about-text" style="max-width: 70ch; margin-bottom: 20px;">
-        68 solved challenges from two Politecnico di Torino security courses &mdash; Offensive
-        Security and Security Verification and Testing &mdash; written up with full vulnerability
+        68 solved challenges from two Politecnico di Torino security courses (Offensive
+        Security, and Security Verification and Testing), written up with full vulnerability
         analysis and working exploit code, not just flags.
       </p>
       <div class="lang-row" style="margin-top: 0; margin-bottom: 36px;">
@@ -150,7 +161,7 @@
       </div>
 
       <div class="labs-grid">
-        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/offensive-security/web/06-jwt-attacks/key-vault" target="_blank" rel="noopener">
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/polito-ctf-writeups/tree/master/offensive-security/web/06-jwt-attacks/key-vault" target="_blank" rel="noopener">
           <i class="fa-solid fa-key cert-icon"></i>
           <h3>JWT <code>jku</code> Header Injection</h3>
           <p>Self-hosted a forged JWKS document to defeat RS256 signature verification and bypass authentication as admin.</p>
@@ -158,7 +169,7 @@
           <span class="lab-link">Read write-up <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </a>
 
-        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/offensive-security/pwn/05-heap-exploitation/whisper" target="_blank" rel="noopener">
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/polito-ctf-writeups/tree/master/offensive-security/pwn/05-heap-exploitation/whisper" target="_blank" rel="noopener">
           <i class="fa-solid fa-microchip cert-icon"></i>
           <h3>Heap Exploitation: Whisper</h3>
           <p>Chained an unsorted-bin libc leak with tcache poisoning to overwrite <code>__free_hook</code> and pop a shell.</p>
@@ -166,7 +177,7 @@
           <span class="lab-link">Read write-up <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </a>
 
-        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/offensive-security/pwn/06-mixed-recap-aquabank/aquabank-safe" target="_blank" rel="noopener">
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/polito-ctf-writeups/tree/master/offensive-security/pwn/06-mixed-recap-aquabank/aquabank-safe" target="_blank" rel="noopener">
           <i class="fa-solid fa-arrows-turn-to-dots cert-icon"></i>
           <h3>Stack Pivot: AquaBank Safe</h3>
           <p>16 bytes of overflow wasn't enough for a ROP chain, so I staged one in a global buffer and pivoted into it with <code>leave; ret</code>.</p>
@@ -174,7 +185,7 @@
           <span class="lab-link">Read write-up <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </a>
 
-        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/offensive-security/web/04-command-injection/virus-vault" target="_blank" rel="noopener">
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/polito-ctf-writeups/tree/master/offensive-security/web/04-command-injection/virus-vault" target="_blank" rel="noopener">
           <i class="fa-solid fa-terminal cert-icon"></i>
           <h3>Blind Command Injection</h3>
           <p>Built a time-based extraction oracle over a file-upload endpoint, with a double-check pass to filter out network-jitter false positives.</p>
@@ -182,7 +193,7 @@
           <span class="lab-link">Read write-up <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </a>
 
-        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/offensive-security/web/03-sql-injection/department-wiki" target="_blank" rel="noopener">
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/polito-ctf-writeups/tree/master/offensive-security/web/03-sql-injection/department-wiki" target="_blank" rel="noopener">
           <i class="fa-solid fa-database cert-icon"></i>
           <h3>Stacked-Query SQLi</h3>
           <p>Used a piggy-backed <code>INSERT</code> to relocate a secret config value into a publicly-rendered table instead of reading it directly.</p>
@@ -190,7 +201,7 @@
           <span class="lab-link">Read write-up <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </a>
 
-        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/ctf-writeups/tree/main/security-verification-testing/reverse-engineering/hidden-pyinstaller" target="_blank" rel="noopener">
+        <a class="lab-card reveal" href="https://github.com/Youssef-Dawoud/polito-ctf-writeups/tree/master/security-verification-testing/reverse-engineering/hidden-pyinstaller" target="_blank" rel="noopener">
           <i class="fa-solid fa-magnifying-glass cert-icon"></i>
           <h3>Unpacking a Frozen Python Binary</h3>
           <p>Recovered the embedded bytecode from a PyInstaller-frozen ELF disguised as a 5.7MB "crackme".</p>
@@ -200,7 +211,7 @@
       </div>
 
       <div class="hero-actions" style="margin-top: 32px;">
-        <a href="https://github.com/Youssef-Dawoud/ctf-writeups" target="_blank" rel="noopener" class="btn btn-ghost">
+        <a href="https://github.com/Youssef-Dawoud/polito-ctf-writeups" target="_blank" rel="noopener" class="btn btn-ghost">
           <i class="fa-brands fa-github"></i> View all 68 write-ups on GitHub
         </a>
       </div>
@@ -214,74 +225,79 @@
         <div class="skill-group reveal">
           <h3>Applied Cryptography</h3>
           <div class="tag-row">
-            <span class="tag">OpenSSL Engine / Provider</span>
-            <span class="tag">ECDSA</span>
-            <span class="tag">Ephemeral ECDH</span>
-            <span class="tag">ChaCha20</span>
-            <span class="tag">AES</span>
+            <span class="tag">OpenSSL ENGINE / Provider API</span>
+            <span class="tag">TLS 1.2 / 1.3</span>
+            <span class="tag">AES-GCM / CCM</span>
+            <span class="tag">ChaCha20-Poly1305</span>
             <span class="tag">RSA</span>
-            <span class="tag">SHA-256</span>
+            <span class="tag">ECDH</span>
+            <span class="tag">ECDSA</span>
+            <span class="tag">SHA-2 / SHA-3</span>
+            <span class="tag">PKI / X.509</span>
           </div>
         </div>
         <div class="skill-group reveal">
-          <h3>Trusted Hardware &amp; Root of Trust</h3>
+          <h3>Trusted Execution &amp; Systems</h3>
           <div class="tag-row">
-            <span class="tag">TEE (OP-TEE)</span>
-            <span class="tag">OpenTitan</span>
             <span class="tag">GlobalPlatform TEE Client API</span>
+            <span class="tag">OP-TEE</span>
+            <span class="tag">Arm TrustZone</span>
+            <span class="tag">Linux kernel modules &amp; crypto API</span>
+            <span class="tag">QEMU</span>
             <span class="tag">RISC-V</span>
           </div>
         </div>
         <div class="skill-group reveal">
-          <h3>Security &amp; Offensive Tools</h3>
+          <h3>Offensive / AppSec</h3>
           <div class="tag-row">
+            <span class="tag">Binary exploitation</span>
+            <span class="tag">Reverse engineering</span>
+            <span class="tag">Web exploitation (OWASP Top 10)</span>
             <span class="tag">radare2</span>
             <span class="tag">pwntools</span>
             <span class="tag">Burp Suite</span>
           </div>
         </div>
         <div class="skill-group reveal">
-          <h3>Programming Languages</h3>
+          <h3>Risk &amp; Compliance</h3>
           <div class="tag-row">
-            <span class="tag">C / C++</span>
-            <span class="tag">Go</span>
-            <span class="tag">Python</span>
-            <span class="tag">Java</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">TypeScript</span>
+            <span class="tag">TARA / threat modelling</span>
+            <span class="tag">NIS2</span>
+            <span class="tag">DORA</span>
+            <span class="tag">ISO/IEC 27001</span>
+            <span class="tag">GDPR</span>
           </div>
         </div>
         <div class="skill-group reveal">
-          <h3>Backend &amp; Frameworks</h3>
+          <h3>Data Protection</h3>
+          <div class="tag-row">
+            <span class="tag">Key management</span>
+            <span class="tag">Encryption at rest</span>
+            <span class="tag">Tokenization</span>
+            <span class="tag">Data discovery &amp; classification</span>
+            <span class="tag">Thales CipherTrust</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Programming</h3>
+          <div class="tag-row">
+            <span class="tag">C / C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">Go</span>
+            <span class="tag">Java</span>
+            <span class="tag">TypeScript / JavaScript</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Web &amp; Cloud</h3>
           <div class="tag-row">
             <span class="tag">Node.js</span>
             <span class="tag">Express.js</span>
             <span class="tag">Nest.js</span>
-            <span class="tag">PHP</span>
-          </div>
-        </div>
-        <div class="skill-group reveal">
-          <h3>Frontend &amp; Mobile</h3>
-          <div class="tag-row">
-            <span class="tag">React.js</span>
-            <span class="tag">Next.js</span>
-            <span class="tag">React Native</span>
-            <span class="tag">Flutter</span>
-          </div>
-        </div>
-        <div class="skill-group reveal">
-          <h3>Cloud &amp; DevOps</h3>
-          <div class="tag-row">
+            <span class="tag">React / React Native</span>
             <span class="tag">AWS (EC2, S3, Elastic Beanstalk)</span>
-            <span class="tag">CI/CD (CircleCI)</span>
-          </div>
-        </div>
-        <div class="skill-group reveal">
-          <h3>Tools</h3>
-          <div class="tag-row">
-            <span class="tag">Git</span>
-            <span class="tag">ESLint</span>
-            <span class="tag">Figma</span>
           </div>
         </div>
       </div>
@@ -298,35 +314,21 @@
             <h3>Teaching Assistant</h3>
             <p class="timeline-meta">Politecnico di Torino · Turin, Italy</p>
             <ul>
-              <li>Assisted professors and supported students during laboratory sessions for Hardware &amp; Wireless Security and Web Applications.</li>
-              <li>Selected as Teaching Assistant after achieving 30/30 in both courses.</li>
+              <li>Ran lab sessions for Hardware &amp; Wireless Security and Web Applications, supporting students through hands-on exercises.</li>
+              <li>Selected as Teaching Assistant after earning 30/30 in both courses.</li>
             </ul>
           </div>
         </div>
 
         <div class="timeline-item reveal">
-          <div class="timeline-date">10/2023 – 10/2024</div>
+          <div class="timeline-date">07/2023 – 10/2024</div>
           <div class="timeline-content">
-            <h3>Fullstack Engineer</h3>
+            <h3>Software Engineer</h3>
             <p class="timeline-meta">Tech Hive · Alexandria, Egypt</p>
             <ul>
-              <li>Developed a real-time chat system from scratch using WebSockets.</li>
-              <li>Built responsive web and mobile apps with React.js and React Native.</li>
-              <li>Developed back-end services for web applications using Node.js.</li>
-              <li>Deployed full-stack web applications on AWS EC2.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-date">07/2023 – 10/2023</div>
-          <div class="timeline-content">
-            <h3>Intern</h3>
-            <p class="timeline-meta">Tech Hive · Alexandria, Egypt</p>
-            <ul>
-              <li>Launched Android applications on the Google Play Store.</li>
-              <li>Managed HTTPS certificates for production deployments.</li>
-              <li>Discovered a server bug that improved a client's system uptime by 50%.</li>
+              <li>Started as an intern and was hired as a full-stack engineer after three months.</li>
+              <li>Managed HTTPS/TLS certificates for client deployments; diagnosed a server fault that cut a client's system downtime by 50%.</li>
+              <li>Built a real-time WebSocket chat system and Node.js back ends on AWS EC2; shipped React / React Native web and mobile apps.</li>
             </ul>
           </div>
         </div>
@@ -351,13 +353,13 @@
 
       <div class="edu-grid">
         <div class="edu-card reveal">
-          <h3>Master's Degree in Cybersecurity</h3>
+          <h3>M.Sc. in Cybersecurity Engineering</h3>
           <p class="timeline-meta">Politecnico di Torino · Turin, Italy</p>
           <p class="timeline-meta">09/2024 – Present</p>
           <ul>
-            <li>98/120 credits completed, weighted average 27.3/30.</li>
-            <li>Expected to graduate December 2026.</li>
-            <li>Thesis: extending <strong>AgnosticSSL</strong>, a backend-agnostic OpenSSL engine for cryptographic offload to Trusted Execution Environments and hardware Roots of Trust. Advisor: Prof. L. Barbierato.</li>
+            <li>Weighted average 27.41/30 with only the thesis remaining; expected graduation November 2026 (109/110).</li>
+            <li>Thesis: <em>Security and Trustworthiness Assessment of Middleware Architectures for Software-Defined Vehicles</em>. Advisor: Prof. L. Barbierato.</li>
+            <li>Relevant courses: Hardware &amp; Wireless Security (30/30), Web Applications (30/30), Cybersecurity Laws &amp; Regulations (NIS2, DORA, ISO/IEC 27001, GDPR).</li>
           </ul>
         </div>
         <div class="edu-card reveal">
@@ -380,6 +382,7 @@
         <div class="cert-card reveal">
           <i class="fa-solid fa-shield-halved cert-icon"></i>
           <h3>Thales CipherTrust Data Security Platform (CDSP) Core Engineer</h3>
+          <p>Thales &amp; Spike Reply, 06/2026. Intensive hands-on training certified by final exam: key management, transparent encryption, tokenization, data discovery &amp; classification.</p>
         </div>
         <div class="cert-card reveal">
           <i class="fa-solid fa-cloud cert-icon"></i>
@@ -402,9 +405,8 @@
           <a href="https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
         <div class="cert-card reveal">
-          <i class="fa-solid fa-code cert-icon"></i>
-          <h3>Udacity: Advanced Full-Stack Web Development Nanodegree</h3>
-          <a href="https://graduation.udacity.com/confirm/JDLNMVFY" target="_blank" rel="noopener">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <i class="fa-brands fa-aws cert-icon"></i>
+          <h3>AWS Academy Graduate: Cloud Security Foundations</h3>
         </div>
       </div>
     </section>
@@ -412,7 +414,7 @@
     <section id="contact" class="section contact-section">
       <p class="section-label">08 / Contact</p>
       <h2 class="section-title">Let's talk</h2>
-      <p class="about-text">Open to cybersecurity roles from December 2026, across applied cryptography, embedded/IoT security, and hardware security.</p>
+      <p class="about-text">Open to security engineering roles from November 2026, in Italy, across Europe or remote. Authorized to work in Italy.</p>
       <div class="contact-links">
         <a href="mailto:dawoudyoussef23@gmail.com" class="contact-pill"><i class="fa-solid fa-envelope"></i> dawoudyoussef23@gmail.com</a>
         <a href="tel:+393513577516" class="contact-pill"><i class="fa-solid fa-phone"></i> +39 351 357 7516</a>
