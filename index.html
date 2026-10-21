@@ -81,8 +81,8 @@
           graduating November 2026 with a 27.41/30 average. My work sits where applied
           cryptography meets systems security: my thesis extends an OpenSSL engine that
           moves an application's cryptography into a Trusted Execution Environment
-          without changing the application, as part of a security assessment of
-          middleware for software-defined vehicles.
+          (OP-TEE on Arm TrustZone) without changing the application, aimed at
+          industrial gateways.
         </p>
         <p class="about-text">
           Before Italy, I worked as a Full-Stack Engineer building production systems:
@@ -112,37 +112,32 @@
       <h2 class="section-title">Master's Thesis</h2>
       <div class="research-card reveal">
         <div class="research-header">
-          <h3>Security and Trustworthiness Assessment of Middleware Architectures for Software-Defined Vehicles</h3>
+          <h3>An OpenSSL Engine for Offloading Cryptography to Trusted Hardware on Industrial Gateways</h3>
           <div class="tag-row">
             <span class="tag">OpenSSL ENGINE</span>
             <span class="tag">GlobalPlatform TEE Client API</span>
             <span class="tag">OP-TEE</span>
             <span class="tag">Arm TrustZone</span>
-            <span class="tag">Linux kernel crypto API</span>
+            <span class="tag">NXP i.MX7 / CAAM</span>
             <span class="tag">TLS 1.2 / 1.3</span>
-            <span class="tag">ECDSA</span>
-            <span class="tag">Ephemeral ECDH</span>
-            <span class="tag">ChaCha20 RNG</span>
-            <span class="tag">Eclipse S-CORE</span>
-            <span class="tag">TARA</span>
+            <span class="tag">ECDSA / ECDH / X25519</span>
+            <span class="tag">RSA</span>
           </div>
         </div>
         <p>
-          The thesis assesses the security of middleware for software-defined vehicles
-          (Eclipse S-CORE). My implementation work builds on an existing OpenSSL engine
-          (prior work by T. Sayarmoafi, Politecnico di Torino, 2025) that intercepts an
-          application's crypto calls and forwards them to an isolated execution context
-          through the GlobalPlatform TEE Client API, so applications get isolated
-          cryptography with zero code changes.
+          My thesis builds on an existing OpenSSL engine that forwards an application's crypto calls through the
+          GlobalPlatform TEE Client API, so applications get hardware-isolated
+          cryptography with zero code changes. I extended it and moved it onto a real
+          OP-TEE secure world (Arm TrustZone) on an NXP i.MX7 board, backed by the
+          chip's CAAM crypto engine.
         </p>
         <ul class="research-list">
-          <li>Extended the engine with context and session handling, working on both OpenSSL 1.1.1 and 3.x.</li>
-          <li>Implemented ECDSA signing, ephemeral ECDH key exchange and a ChaCha20-based RNG, backed by a Linux kernel module acting as the TEE through the kernel crypto API.</li>
-          <li>Validated with 99 automated byte-for-byte checks against stock OpenSSL (0 B to 5 MB) and live TLS 1.2/1.3 handshakes, instrumented to prove the engine, not OpenSSL's silent software fallback, did the work.</li>
-          <li>Wrote a cycle-accurate benchmark harness (RDTSC, core-pinned, calibrated) to measure engine overhead against native OpenSSL.</li>
-          <li>Now porting the backend to a real OP-TEE Trusted Application on Arm TrustZone for Eclipse S-CORE, alongside a Threat Analysis and Risk Assessment (TARA) of the middleware.</li>
+          <li>Extended the engine with ECDSA, ECDH, X25519, AES-GCM/CCM, ChaCha20-Poly1305, more hashes and an RNG, and wrote five new OP-TEE Trusted Applications.</li>
+          <li>Full TLS 1.2 and TLS 1.3 handshakes run in the secure world, with ECDSA and RSA server keys generated inside the TEE and never leaving it.</li>
+          <li>Found a bug in OP-TEE's CAAM RSA driver, present upstream since 2020, that kept it from using CRT keys. Fixed it on the board (RSA-2048 private operations 131 ms to 36 ms) and sent the fix upstream as <a href="https://github.com/OP-TEE/optee_os/pull/8140" target="_blank" rel="noopener">OP-TEE pull request #8140</a>, with <a href="https://github.com/OP-TEE/optee_os/issues/8139" target="_blank" rel="noopener">issue #8139</a> reporting a related hang with CAAM-generated keys.</li>
+          <li>Validated with 129 automated checks on OP-TEE 4.8 and benchmarked against plain OpenSSL and Linux's own CAAM driver.</li>
         </ul>
-        <p class="research-note">Advisor: Prof. L. Barbierato, Politecnico di Torino</p>
+        <p class="research-note">Supervisors: Prof. Luca Barbierato, Prof. Edoardo Patti, Ph.D. Tina Sayarmoafi, Politecnico di Torino</p>
       </div>
     </section>
 
@@ -358,7 +353,7 @@
           <p class="timeline-meta">09/2024 – Present</p>
           <ul>
             <li>Weighted average 27.41/30 with only the thesis remaining; expected graduation November 2026 (109/110).</li>
-            <li>Thesis: <em>Security and Trustworthiness Assessment of Middleware Architectures for Software-Defined Vehicles</em>. Advisor: Prof. L. Barbierato.</li>
+            <li>Thesis: <em>An OpenSSL Engine for Offloading Cryptography to Trusted Hardware on Industrial Gateways</em>. Supervisors: Prof. L. Barbierato, Prof. E. Patti.</li>
             <li>Relevant courses: Hardware &amp; Wireless Security (30/30), Web Applications (30/30), Cybersecurity Laws &amp; Regulations (NIS2, DORA, ISO/IEC 27001, GDPR).</li>
           </ul>
         </div>
